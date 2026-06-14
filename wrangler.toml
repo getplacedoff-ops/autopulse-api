@@ -1,21 +1,29 @@
 name = "autopulse-api"
 main = "index.js"
-compatibility_date = "2024-01-01"
+compatibility_date = "2024-06-01"
+compatibility_flags = [ "nodejs_compat" ]
 
 [vars]
+# System Environment
+ENVIRONMENT = "production"
+
 # Ingestion & Database Endpoints
-SUPABASE_URL = "https://your-project.supabase.co"
+SUPABASE_URL = "https://lfjyktuirksclrvujmvz.supabase.co"
+ORACLE_API_BASE = "https://api.internal.autopulse.dev"
 
 # Heavy Compute Fallback Engines
 OCI_ENGINE_URL = "http://140.245.226.112:8080"
 CLOUD_RUN_URL = "http://140.245.226.112:8080"
 
 # Multi-Provider AI Failover Router API Endpoints
-NVIDIA_API_URL = "https://integrate.api.nvidia.com/v1"
 GROQ_API_URL = "https://api.groq.com/openai/v1"
 GEMINI_API_URL = "https://generativelanguage.googleapis.com"
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1"
 HF_SPACE_URL = "https://your-space.hf.space"
+
+# NVIDIA NIM Multi-Key Rotation Infrastructure Configuration
+NVIDIA_API_URL = "https://integrate.api.nvidia.com/v1"
+HAS_NIM_ROTATION = "true"
 
 [[kv_namespaces]]
 binding = "RATE_LIMIT_KV"
@@ -24,3 +32,6 @@ id = "4d4caa4547fe4be59e781563354bd6b1"
 [[r2_buckets]]
 binding = "ASSETS_BUCKET"
 bucket_name = "autopulse-assets-bucket"
+
+[triggers]
+crons = ["0 */20 * * *"]
