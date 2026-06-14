@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+playwright
+httpx
+pydantic
+pydantic-settings
+openai
+google-generativeai
+groq
+python-multipart
+python-dotenv
+beautifulsoup4
+langgraph
+langchain-core
+Pillow
