@@ -1,0 +1,8 @@
+name = "autopulse-api"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "4d4caa4547fe4be59e781563354bd6b1"
+
